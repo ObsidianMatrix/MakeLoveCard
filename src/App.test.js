@@ -33,3 +33,14 @@ test('クリックでボタンが表示されカウントを更新できる', as
     JSON.stringify({ cards: { [cards[0].card_number]: 1 } }, null, 2),
   );
 });
+
+test('一度表示されたボタンは他のカードをクリックしても残る', async () => {
+  render(<App />);
+  const images = screen.getAllByRole('img');
+  await userEvent.click(images[0]);
+  await userEvent.click(images[1]);
+  const plusButtons = screen.getAllByRole('button', { name: '+' });
+  const minusButtons = screen.getAllByRole('button', { name: '-' });
+  expect(plusButtons).toHaveLength(2);
+  expect(minusButtons).toHaveLength(2);
+});
