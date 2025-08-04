@@ -3,11 +3,13 @@ import userEvent from '@testing-library/user-event';
 import App from './App';
 import cards from './cards.json';
 
-test('renders images for all cards', () => {
+const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
+
+test('エネルギーカードを除外して画像を表示する', () => {
   render(<App />);
   const images = screen.getAllByRole('img');
-  expect(images).toHaveLength(cards.length);
-  expect(images[0]).toHaveAttribute('src', cards[0].image_url);
+  expect(images).toHaveLength(displayCards.length);
+  expect(images[0]).toHaveAttribute('src', displayCards[0].image_url);
 });
 
 test('クリックでボタンが表示されカウントを更新できる', async () => {
@@ -20,17 +22,17 @@ test('クリックでボタンが表示されカウントを更新できる', as
 
   await userEvent.click(plus);
   expect(textarea).toHaveValue(
-    JSON.stringify({ cards: { [cards[0].card_number]: 1 } }, null, 2),
+    JSON.stringify({ cards: { [displayCards[0].card_number]: 1 } }, null, 2),
   );
 
   await userEvent.click(plus);
   expect(textarea).toHaveValue(
-    JSON.stringify({ cards: { [cards[0].card_number]: 2 } }, null, 2),
+    JSON.stringify({ cards: { [displayCards[0].card_number]: 2 } }, null, 2),
   );
 
   await userEvent.click(minus);
   expect(textarea).toHaveValue(
-    JSON.stringify({ cards: { [cards[0].card_number]: 1 } }, null, 2),
+    JSON.stringify({ cards: { [displayCards[0].card_number]: 1 } }, null, 2),
   );
 
   await userEvent.click(minus);
