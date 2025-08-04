@@ -5,6 +5,14 @@
 .cards-container {
   height: 85vh;
   overflow-y: auto;
+  margin: 0 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards-container img {
+  width: 200px;
+  height: auto;
 }
 
 .App-logo {
