@@ -16,7 +16,13 @@ function App() {
       let newCount = current + delta;
       if (newCount < 0) newCount = 0;
       if (newCount > 4) newCount = 4;
-      return { ...prev, [cardNumber]: newCount };
+      const updated = { ...prev };
+      if (newCount === 0) {
+        delete updated[cardNumber];
+      } else {
+        updated[cardNumber] = newCount;
+      }
+      return updated;
     });
   };
 

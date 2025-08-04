@@ -32,6 +32,11 @@ test('クリックでボタンが表示されカウントを更新できる', as
   expect(textarea).toHaveValue(
     JSON.stringify({ cards: { [cards[0].card_number]: 1 } }, null, 2),
   );
+
+  await userEvent.click(minus);
+  expect(textarea).toHaveValue(
+    JSON.stringify({ cards: {} }, null, 2),
+  );
 });
 
 test('一度表示されたボタンは他のカードをクリックしても残る', async () => {
