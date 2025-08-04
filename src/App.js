@@ -7,6 +7,7 @@ function App() {
   const [activeCards, setActiveCards] = useState({});
   const [name, setName] = useState('');
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
+  const totalValue = Object.values(clickCounts).reduce((sum, val) => sum + val, 0);
 
   const handleImageClick = (cardNumber) => {
     setActiveCards((prev) => ({ ...prev, [cardNumber]: true }));
@@ -67,6 +68,7 @@ function App() {
           </div>
         ))}
       </div>
+      <p>メインデッキ：{totalValue} / 60</p>
       <form>
         <input
           type="text"
