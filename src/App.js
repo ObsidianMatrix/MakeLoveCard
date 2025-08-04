@@ -43,26 +43,28 @@ function App() {
 
   return (
     <div className="App">
-      {cards.map((card, index) => (
-        <div key={`${card.card_number}-${index}`}>
-          <img
-            src={card.image_url}
-            alt={`card-${card.card_number}`}
-            onClick={() => handleImageClick(card.card_number)}
-          />
-          {activeCards[card.card_number] && (
-            <div>
-              <button onClick={() => handleChangeCount(card.card_number, 1)}>+</button>
-              <input
-                type="number"
-                readOnly
-                value={clickCounts[card.card_number] || 0}
-              />
-              <button onClick={() => handleChangeCount(card.card_number, -1)}>-</button>
-            </div>
-          )}
-        </div>
-      ))}
+      <div className="cards-container">
+        {cards.map((card, index) => (
+          <div key={`${card.card_number}-${index}`}>
+            <img
+              src={card.image_url}
+              alt={`card-${card.card_number}`}
+              onClick={() => handleImageClick(card.card_number)}
+            />
+            {activeCards[card.card_number] && (
+              <div>
+                <button onClick={() => handleChangeCount(card.card_number, 1)}>+</button>
+                <input
+                  type="number"
+                  readOnly
+                  value={clickCounts[card.card_number] || 0}
+                />
+                <button onClick={() => handleChangeCount(card.card_number, -1)}>-</button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
       <form>
         <textarea
           readOnly
