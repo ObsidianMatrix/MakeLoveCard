@@ -12,7 +12,10 @@ function App() {
 
   const handleChangeCount = (cardNumber, delta) => {
     setClickCounts((prev) => {
-      const newCount = (prev[cardNumber] || 0) + delta;
+      const current = prev[cardNumber] || 0;
+      let newCount = current + delta;
+      if (newCount < 0) newCount = 0;
+      if (newCount > 4) newCount = 4;
       return { ...prev, [cardNumber]: newCount };
     });
   };
