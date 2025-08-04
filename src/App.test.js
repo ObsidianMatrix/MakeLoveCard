@@ -18,26 +18,38 @@ test('クリックでボタンが表示されカウントを更新できる', as
   await userEvent.click(images[0]);
   const plus = screen.getByRole('button', { name: '+' });
   const minus = screen.getByRole('button', { name: '-' });
-  const textarea = screen.getByRole('textbox');
+  const textarea = screen.getByRole('textbox', { name: 'deck-json' });
 
   await userEvent.click(plus);
   expect(textarea).toHaveValue(
-    JSON.stringify({ cards: { [displayCards[0].card_number]: 1 } }, null, 2),
+    JSON.stringify(
+      { name: '', cards: { [displayCards[0].card_number]: 1 } },
+      null,
+      2,
+    ),
   );
 
   await userEvent.click(plus);
   expect(textarea).toHaveValue(
-    JSON.stringify({ cards: { [displayCards[0].card_number]: 2 } }, null, 2),
+    JSON.stringify(
+      { name: '', cards: { [displayCards[0].card_number]: 2 } },
+      null,
+      2,
+    ),
   );
 
   await userEvent.click(minus);
   expect(textarea).toHaveValue(
-    JSON.stringify({ cards: { [displayCards[0].card_number]: 1 } }, null, 2),
+    JSON.stringify(
+      { name: '', cards: { [displayCards[0].card_number]: 1 } },
+      null,
+      2,
+    ),
   );
 
   await userEvent.click(minus);
   expect(textarea).toHaveValue(
-    JSON.stringify({ cards: {} }, null, 2),
+    JSON.stringify({ name: '', cards: {} }, null, 2),
   );
 });
 
