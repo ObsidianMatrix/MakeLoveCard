@@ -23,7 +23,7 @@ test('クリックでボタンが表示されカウントを更新できる', as
   await userEvent.click(plus);
   expect(textarea).toHaveValue(
     JSON.stringify(
-      { name: '', cards: { [displayCards[0].card_number]: 1 } },
+      { name: '', cards: { [displayCards[0].card_number]: '1' } },
       null,
       2,
     ),
@@ -32,7 +32,7 @@ test('クリックでボタンが表示されカウントを更新できる', as
   await userEvent.click(plus);
   expect(textarea).toHaveValue(
     JSON.stringify(
-      { name: '', cards: { [displayCards[0].card_number]: 2 } },
+      { name: '', cards: { [displayCards[0].card_number]: '2' } },
       null,
       2,
     ),
@@ -41,7 +41,7 @@ test('クリックでボタンが表示されカウントを更新できる', as
   await userEvent.click(minus);
   expect(textarea).toHaveValue(
     JSON.stringify(
-      { name: '', cards: { [displayCards[0].card_number]: 1 } },
+      { name: '', cards: { [displayCards[0].card_number]: '1' } },
       null,
       2,
     ),

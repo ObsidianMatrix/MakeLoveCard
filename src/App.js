@@ -8,6 +8,9 @@ function App() {
   const [name, setName] = useState('');
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
   const totalValue = Object.values(clickCounts).reduce((sum, val) => sum + val, 0);
+  const stringifiedCards = Object.fromEntries(
+    Object.entries(clickCounts).map(([k, v]) => [k, String(v)])
+  );
 
   const handleImageClick = (cardNumber) => {
     setActiveCards((prev) => ({ ...prev, [cardNumber]: true }));
@@ -30,7 +33,7 @@ function App() {
   };
 
   const handleSave = () => {
-    const data = { name, cards: clickCounts };
+    const data = { name, cards: stringifiedCards };
     const blob = new Blob([JSON.stringify(data, null, 2)], {
       type: 'application/json',
     });
@@ -79,7 +82,7 @@ function App() {
         <textarea
           aria-label="deck-json"
           readOnly
-          value={JSON.stringify({ name, cards: clickCounts }, null, 2)}
+          value={JSON.stringify({ name, cards: stringifiedCards }, null, 2)}
         />
         <button type="button" onClick={handleSave}>
           保存
