@@ -5,6 +5,7 @@ import { useState } from 'react';
 function App() {
   const [clickCounts, setClickCounts] = useState({});
   const [activeCards, setActiveCards] = useState({});
+  const [name, setName] = useState('');
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
 
   const handleImageClick = (cardNumber) => {
@@ -28,7 +29,7 @@ function App() {
   };
 
   const handleSave = () => {
-    const data = { cards: clickCounts };
+    const data = { name, cards: clickCounts };
     const blob = new Blob([JSON.stringify(data, null, 2)], {
       type: 'application/json',
     });
@@ -67,9 +68,16 @@ function App() {
         ))}
       </div>
       <form>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <textarea
+          aria-label="deck-json"
           readOnly
-          value={JSON.stringify({ cards: clickCounts }, null, 2)}
+          value={JSON.stringify({ name, cards: clickCounts }, null, 2)}
         />
         <button type="button" onClick={handleSave}>
           保存
