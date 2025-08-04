@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import cards from './cards.json';
 
 function App() {
+  const imageUrls = [];
+  for (let i = 0; i < cards.length; i += 1) {
+    imageUrls.push(cards[i].image_url);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {imageUrls.map((url, index) => (
+        <img key={index} src={url} alt={`card-${index}`} />
+      ))}
     </div>
   );
 }

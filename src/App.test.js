@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import cards from './cards.json';
 
-test('renders learn react link', () => {
+test('renders images for all cards', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const images = screen.getAllByRole('img');
+  expect(images).toHaveLength(cards.length);
+  expect(images[0]).toHaveAttribute('src', cards[0].image_url);
 });
