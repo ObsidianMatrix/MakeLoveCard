@@ -1,0 +1,9 @@
+{
+  "name": "makelovecard",
+  "version": "1.0.0",
+  "description": "Simple React application for MakeLoveCard",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  }
+}
