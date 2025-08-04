@@ -4,10 +4,10 @@ import { useState } from 'react';
 
 function App() {
   const [clickCounts, setClickCounts] = useState({});
-  const [activeCard, setActiveCard] = useState(null);
+  const [activeCards, setActiveCards] = useState({});
 
   const handleImageClick = (cardNumber) => {
-    setActiveCard(cardNumber);
+    setActiveCards((prev) => ({ ...prev, [cardNumber]: true }));
   };
 
   const handleChangeCount = (cardNumber, delta) => {
@@ -41,7 +41,7 @@ function App() {
             alt={`card-${card.card_number}`}
             onClick={() => handleImageClick(card.card_number)}
           />
-          {activeCard === card.card_number && (
+          {activeCards[card.card_number] && (
             <div>
               <button onClick={() => handleChangeCount(card.card_number, 1)}>+</button>
               <input
