@@ -5,6 +5,7 @@ import { useState } from 'react';
 function App() {
   const [clickCounts, setClickCounts] = useState({});
   const [activeCards, setActiveCards] = useState({});
+  const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
 
   const handleImageClick = (cardNumber) => {
     setActiveCards((prev) => ({ ...prev, [cardNumber]: true }));
@@ -44,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <div className="cards-container">
-        {cards.map((card, index) => (
+        {displayCards.map((card, index) => (
           <div key={`${card.card_number}-${index}`}>
             <img
               src={card.image_url}
