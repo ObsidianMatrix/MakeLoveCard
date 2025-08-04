@@ -4,10 +4,15 @@ import { useState } from 'react';
 
 function App() {
   const [clickCounts, setClickCounts] = useState({});
+  const [activeCard, setActiveCard] = useState(null);
 
   const handleImageClick = (cardNumber) => {
+    setActiveCard(cardNumber);
+  };
+
+  const handleChangeCount = (cardNumber, delta) => {
     setClickCounts((prev) => {
-      const newCount = (prev[cardNumber] || 0) + 1;
+      const newCount = (prev[cardNumber] || 0) + delta;
       return { ...prev, [cardNumber]: newCount };
     });
   };
@@ -29,13 +34,25 @@ function App() {
 
   return (
     <div className="App">
-      {cards.map((card) => (
-        <img
-          key={card.card_number}
-          src={card.image_url}
-          alt={`card-${card.card_number}`}
-          onClick={() => handleImageClick(card.card_number)}
-        />
+      {cards.map((card, index) => (
+        <div key={`${card.card_number}-${index}`}>
+          <img
+            src={card.image_url}
+            alt={`card-${card.card_number}`}
+            onClick={() => handleImageClick(card.card_number)}
+          />
+          {activeCard === card.card_number && (
+            <div>
+              <button onClick={() => handleChangeCount(card.card_number, 1)}>+</button>
+              <input
+                type="number"
+                readOnly
+                value={clickCounts[card.card_number] || 0}
+              />
+              <button onClick={() => handleChangeCount(card.card_number, -1)}>-</button>
+            </div>
+          )}
+        </div>
       ))}
       <form>
         <textarea
