@@ -52,6 +52,11 @@
   margin: 5px;
 }
 
+.modal-card img {
+  width: 200px;
+  height: auto;
+}
+
 .card-count {
   position: absolute;
   bottom: 5px;
