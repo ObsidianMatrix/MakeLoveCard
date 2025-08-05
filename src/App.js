@@ -131,11 +131,6 @@ function App() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <textarea
-          aria-label="deck-json"
-          readOnly
-          value={JSON.stringify({ name, cards: stringifiedCards }, null, 2)}
-        />
         <input
           type="file"
           accept="application/json"
