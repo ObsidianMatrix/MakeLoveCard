@@ -123,7 +123,9 @@ function App() {
         デッキを確認
       </button>
       <form>
+        <label htmlFor="deck-name">デッキ名</label>
         <input
+          id="deck-name"
           type="text"
           name="name"
           value={name}
