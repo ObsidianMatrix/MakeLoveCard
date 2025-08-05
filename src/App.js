@@ -6,6 +6,7 @@ function App() {
   const [clickCounts, setClickCounts] = useState({});
   const [activeCards, setActiveCards] = useState({});
   const [name, setName] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
   const totalValue = Object.values(clickCounts).reduce((sum, val) => sum + val, 0);
   const stringifiedCards = Object.fromEntries(
@@ -47,6 +48,14 @@ function App() {
     URL.revokeObjectURL(url);
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="App">
       <div className="cards-container">
@@ -72,6 +81,9 @@ function App() {
         ))}
       </div>
       <p>メインデッキ：{totalValue} / 60</p>
+      <button type="button" onClick={openModal}>
+        デッキを確認
+      </button>
       <form>
         <input
           type="text"
@@ -88,6 +100,33 @@ function App() {
           保存
         </button>
       </form>
+
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeModal}>
+              ×
+            </button>
+            {Object.keys(stringifiedCards).map((cardNumber) => {
+              const card = cards.find(
+                (c) => c.card_number === cardNumber
+              );
+              if (!card) return null;
+              return (
+                <div key={cardNumber} className="modal-card">
+                  <img
+                    src={card.image_url}
+                    alt={`card-${cardNumber}`}
+                  />
+                  <span className="card-count">
+                    {stringifiedCards[cardNumber]}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
