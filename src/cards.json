@@ -340,6 +340,179 @@
         "card_number": "PL!S-PR-024-PR"
     },
     {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-025-PR.png",
+        "name": "高海千歌",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "CYaRon！",
+        "cost": "2",
+        "heart": {
+            "red": "1"
+        },
+        "blade_heart": {
+            "red": "1"
+        },
+        "blade": "1",
+        "rare": "PR",
+        "card_number": "PL!S-PR-025-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-026-PR.png",
+        "name": "桜内梨子",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "Guilty Kiss",
+        "cost": "2",
+        "heart": {
+            "blue": "1"
+        },
+        "blade_heart": {
+            "blue": "1"
+        },
+        "blade": "1",
+        "rare": "PR",
+        "card_number": "PL!S-PR-026-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-027-PR.png",
+        "name": "松浦果南",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "AZALEA",
+        "cost": "2",
+        "heart": {
+            "green": "1"
+        },
+        "blade_heart": {
+            "green": "1"
+        },
+        "blade": "1",
+        "rare": "PR",
+        "card_number": "PL!S-PR-027-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-028-PR.png",
+        "name": "黒澤ダイヤ",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "AZALEA",
+        "cost": "4",
+        "heart": {
+            "red": "1",
+            "green": "1"
+        },
+        "blade": "1",
+        "rare": "PR",
+        "card_number": "PL!S-PR-028-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-029-PR.png",
+        "name": "渡辺 曜",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "CYaRon！",
+        "cost": "9",
+        "heart": {
+            "red": "1",
+            "green": "1",
+            "blue": "1"
+        },
+        "blade": "3",
+        "rare": "PR",
+        "card_number": "PL!S-PR-029-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-030-PR.png",
+        "name": "津島善子",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "Guilty Kiss",
+        "cost": "9",
+        "heart": {
+            "red": "1",
+            "green": "1",
+            "blue": "1"
+        },
+        "blade": "3",
+        "rare": "PR",
+        "card_number": "PL!S-PR-030-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-031-PR.png",
+        "name": "国木田花丸",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "AZALEA",
+        "cost": "9",
+        "heart": {
+            "red": "1",
+            "green": "1",
+            "blue": "1"
+        },
+        "blade": "3",
+        "rare": "PR",
+        "card_number": "PL!S-PR-031-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-032-PR.png",
+        "name": "小原鞠莉",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "Guilty Kiss",
+        "cost": "4",
+        "heart": {
+            "green": "1",
+            "blue": "1"
+        },
+        "blade": "1",
+        "rare": "PR",
+        "card_number": "PL!S-PR-032-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-033-PR.png",
+        "name": "黒澤ルビィ",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "CYaRon！",
+        "cost": "4",
+        "heart": {
+            "red": "1",
+            "blue": "1"
+        },
+        "blade": "1",
+        "rare": "PR",
+        "card_number": "PL!S-PR-033-PR",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-034-PR2.png",
+        "name": "",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "CYaRon！",
+        "rare": "PR+",
+        "card_number": "PL!S-PR-034-PR2",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-035-PR.png",
+        "name": "",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！サンシャイン!!",
+        "unit_name": "CYaRon！",
+        "rare": "PR",
+        "card_number": "PL!S-PR-035-PR",
+        "direction": "-"
+    },
+    {
         "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PYHN-PR-001-PR.png",
         "name": "幻日のヨハネ",
         "card_kind": "エネルギー",
@@ -9906,6 +10079,490 @@
         "card_kind": "エネルギー",
         "rare": "SRE",
         "card_number": "PL!S-pb1-063-SRE",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/LL-E-001-SD.png",
+        "name": "エネルギーカード",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "rare": "SD",
+        "card_number": "LL-E-001-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-001-SD.png",
+        "name": "高坂 穂乃果",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "cost": "11",
+        "heart": {
+            "pink": "1",
+            "yellow": "2",
+            "purple": "1"
+        },
+        "blade": "3",
+        "rare": "SD",
+        "card_number": "PL!-sd1-001-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-002-SD.png",
+        "name": "絢瀬 絵里",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "cost": "2",
+        "heart": {
+            "purple": "1"
+        },
+        "blade_heart": {
+            "purple": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-002-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-003-SD.png",
+        "name": "南 ことり",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "cost": "13",
+        "heart": {
+            "pink": "1",
+            "yellow": "2",
+            "purple": "2"
+        },
+        "blade_heart": {
+            "purple": "1"
+        },
+        "blade": "3",
+        "rare": "SD",
+        "card_number": "PL!-sd1-003-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-004-SD.png",
+        "name": "園田 海未",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "cost": "11",
+        "heart": {
+            "pink": "2",
+            "yellow": "1",
+            "purple": "1"
+        },
+        "blade_heart": {
+            "pink": "1"
+        },
+        "blade": "3",
+        "rare": "SD",
+        "card_number": "PL!-sd1-004-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-005-SD.png",
+        "name": "星空 凛",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "cost": "2",
+        "heart": {
+            "pink": "1"
+        },
+        "blade_heart": {
+            "pink": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-005-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-006-SD.png",
+        "name": "西木野 真姫",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "cost": "9",
+        "heart": {
+            "pink": "1",
+            "yellow": "1",
+            "purple": "2"
+        },
+        "blade": "2",
+        "rare": "SD",
+        "card_number": "PL!-sd1-006-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-007-SD.png",
+        "name": "東條 希",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "cost": "7",
+        "heart": {
+            "pink": "1",
+            "yellow": "1",
+            "purple": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-007-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-008-SD.png",
+        "name": "小泉 花陽",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "cost": "4",
+        "heart": {
+            "pink": "1",
+            "yellow": "1"
+        },
+        "blade_heart": {
+            "yellow": "1"
+        },
+        "rare": "SD",
+        "card_number": "PL!-sd1-008-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-009-SD.png",
+        "name": "矢澤 にこ",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "cost": "15",
+        "heart": {
+            "pink": "2",
+            "yellow": "2",
+            "purple": "2"
+        },
+        "blade_heart": {
+            "purple": "1"
+        },
+        "blade": "5",
+        "rare": "SD",
+        "card_number": "PL!-sd1-009-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-010-SD.png",
+        "name": "高坂 穂乃果",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "cost": "4",
+        "heart": {
+            "pink": "1",
+            "yellow": "1"
+        },
+        "blade_heart": {
+            "yellow": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-010-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-011-SD.png",
+        "name": "絢瀬 絵里",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "cost": "4",
+        "heart": {
+            "pink": "1",
+            "purple": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-011-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-012-SD.png",
+        "name": "南 ことり",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "cost": "4",
+        "heart": {
+            "yellow": "1",
+            "purple": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-012-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-013-SD.png",
+        "name": "園田 海未",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "cost": "4",
+        "heart": {
+            "pink": "1",
+            "purple": "1"
+        },
+        "blade_heart": {
+            "pink": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-013-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-014-SD.png",
+        "name": "星空 凛",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "cost": "9",
+        "heart": {
+            "pink": "2",
+            "yellow": "1",
+            "purple": "1"
+        },
+        "blade": "3",
+        "rare": "SD",
+        "card_number": "PL!-sd1-014-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-015-SD.png",
+        "name": "西木野 真姫",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "cost": "9",
+        "heart": {
+            "pink": "1",
+            "purple": "2"
+        },
+        "blade": "3",
+        "rare": "SD",
+        "card_number": "PL!-sd1-015-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-016-SD.png",
+        "name": "東條 希",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "cost": "4",
+        "heart": {
+            "pink": "1",
+            "yellow": "1"
+        },
+        "blade": "1",
+        "rare": "SD",
+        "card_number": "PL!-sd1-016-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-017-SD.png",
+        "name": "小泉 花陽",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "cost": "9",
+        "heart": {
+            "pink": "1",
+            "yellow": "2",
+            "purple": "1"
+        },
+        "blade": "3",
+        "rare": "SD",
+        "card_number": "PL!-sd1-017-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-018-SD.png",
+        "name": "矢澤 にこ",
+        "card_kind": "メンバー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "cost": "9",
+        "heart": {
+            "pink": "1",
+            "yellow": "1",
+            "purple": "2"
+        },
+        "blade": "3",
+        "rare": "SD",
+        "card_number": "PL!-sd1-018-SD",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-pb1-019-SD.png",
+        "name": "START:DASH!!",
+        "card_kind": "ライブ",
+        "work_title": "ラブライブ！",
+        "direction": "1",
+        "heart": {
+            "pink": "1",
+            "yellow": "1",
+            "purple": "1"
+        },
+        "blade_heart": {
+            "score": "1"
+        },
+        "rare": "SD",
+        "card_number": "PL!-sd1-019-SD"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-pb1-020-SD.png",
+        "name": "きっと青春が聞こえる",
+        "card_kind": "ライブ",
+        "work_title": "ラブライブ！",
+        "direction": "2",
+        "heart": {
+            "pink": "1",
+            "yellow": "1",
+            "black": "3"
+        },
+        "blade_heart": null,
+        "rare": "SD",
+        "card_number": "PL!-sd1-020-SD"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-pb1-021-SD.png",
+        "name": "これからのSomeday",
+        "card_kind": "ライブ",
+        "work_title": "ラブライブ！",
+        "direction": "3",
+        "heart": {
+            "pink": "1",
+            "yellow": "1",
+            "purple": "1",
+            "black": "4"
+        },
+        "blade_heart": null,
+        "rare": "SD",
+        "card_number": "PL!-sd1-021-SD"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-pb1-022-SD.png",
+        "name": "僕らは今のなかで",
+        "card_kind": "ライブ",
+        "work_title": "ラブライブ！",
+        "direction": "4",
+        "heart": {
+            "pink": "2",
+            "yellow": "2",
+            "purple": "2",
+            "black": "6"
+        },
+        "blade_heart": {
+            "yellow": "1",
+            "draw": "1"
+        },
+        "rare": "SD",
+        "card_number": "PL!-sd1-022-SD"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-023-P.png",
+        "name": "高坂 穂乃果",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "rare": "P",
+        "card_number": "PL!-sd1-023-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-024-P.png",
+        "name": "絢瀬 絵里",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "rare": "P",
+        "card_number": "PL!-sd1-024-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-025-P.png",
+        "name": "南 ことり",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "rare": "P",
+        "card_number": "PL!-sd1-025-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-026-P.png",
+        "name": "園田 海未",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "rare": "P",
+        "card_number": "PL!-sd1-026-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-027-P.png",
+        "name": "星空 凛",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "rare": "P",
+        "card_number": "PL!-sd1-027-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-028-P.png",
+        "name": "西木野 真姫",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "rare": "P",
+        "card_number": "PL!-sd1-028-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-029-P.png",
+        "name": "東條 希",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "lily white",
+        "rare": "P",
+        "card_number": "PL!-sd1-029-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-030-P.png",
+        "name": "小泉 花陽",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "Printemps",
+        "rare": "P",
+        "card_number": "PL!-sd1-030-P",
+        "direction": "-"
+    },
+    {
+        "image_url": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PLSD01/PL!-sd1-031-P.png",
+        "name": "矢澤 にこ",
+        "card_kind": "エネルギー",
+        "work_title": "ラブライブ！",
+        "unit_name": "BiBi",
+        "rare": "P",
+        "card_number": "PL!-sd1-031-P",
         "direction": "-"
     },
     {
