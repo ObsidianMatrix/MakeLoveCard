@@ -1,12 +1,13 @@
 import './App.css';
 import cards from './cards.json';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function App() {
   const [clickCounts, setClickCounts] = useState({});
   const [activeCards, setActiveCards] = useState({});
   const [name, setName] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const fileInputRef = useRef(null);
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
   const totalValue = Object.values(clickCounts).reduce((sum, val) => sum + val, 0);
   const stringifiedCards = Object.fromEntries(
@@ -56,6 +57,43 @@ function App() {
     setIsModalOpen(false);
   };
 
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    if (file.type !== 'application/json') {
+      e.target.value = '';
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const data = JSON.parse(event.target.result);
+        setName(data.name || '');
+        const importedCounts = {};
+        const importedActive = {};
+        if (data.cards) {
+          Object.entries(data.cards).forEach(([k, v]) => {
+            const num = parseInt(v, 10);
+            if (!Number.isNaN(num) && num > 0) {
+              importedCounts[k] = num;
+              importedActive[k] = true;
+            }
+          });
+        }
+        setClickCounts(importedCounts);
+        setActiveCards(importedActive);
+      } catch (err) {
+        console.error('Invalid JSON file');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
   return (
     <div className="App">
       <div className="cards-container">
@@ -96,8 +134,18 @@ function App() {
           readOnly
           value={JSON.stringify({ name, cards: stringifiedCards }, null, 2)}
         />
+        <input
+          type="file"
+          accept="application/json"
+          ref={fileInputRef}
+          style={{ display: 'none' }}
+          onChange={handleFileChange}
+        />
         <button type="button" onClick={handleSave}>
           保存
+        </button>
+        <button type="button" onClick={handleImportClick}>
+          インポート
         </button>
       </form>
 
