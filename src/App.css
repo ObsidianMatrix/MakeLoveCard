@@ -68,6 +68,10 @@
   font-size: 14px;
 }
 
+form > * {
+  margin: 8px 0;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
