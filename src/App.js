@@ -145,6 +145,11 @@ function App() {
           インポート
         </button>
       </form>
+      <textarea
+        aria-label="deck-json"
+        readOnly
+        value={JSON.stringify({ name, cards: stringifiedCards }, null, 2)}
+      />
 
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
@@ -163,9 +168,19 @@ function App() {
                     src={card.image_url}
                     alt={`card-${cardNumber}`}
                   />
-                  <span className="card-count">
-                    {stringifiedCards[cardNumber]}
-                  </span>
+                  <div className="modal-controls">
+                    <button onClick={() => handleChangeCount(cardNumber, 1)}>
+                      +
+                    </button>
+                    <input
+                      type="number"
+                      readOnly
+                      value={clickCounts[cardNumber] || 0}
+                    />
+                    <button onClick={() => handleChangeCount(cardNumber, -1)}>
+                      -
+                    </button>
+                  </div>
                 </div>
               );
             })}
