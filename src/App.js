@@ -9,13 +9,16 @@ function App() {
   const [name, setName] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
-  const [printCards, setPrintCards] = useState({});
+  const [printClickCounts, setPrintClickCounts] = useState({});
   const [decklogId, setDecklogId] = useState('');
   const fileInputRef = useRef(null);
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
   const totalValue = Object.values(clickCounts).reduce((sum, val) => sum + val, 0);
   const stringifiedCards = Object.fromEntries(
     Object.entries(clickCounts).map(([k, v]) => [k, String(v)])
+  );
+  const stringifiedPrintCards = Object.fromEntries(
+    Object.entries(printClickCounts).map(([k, v]) => [k, String(v)])
   );
 
   const handleImageClick = (cardNumber) => {
@@ -24,6 +27,22 @@ function App() {
 
   const handleChangeCount = (cardNumber, delta) => {
     setClickCounts((prev) => {
+      const current = prev[cardNumber] || 0;
+      let newCount = current + delta;
+      if (newCount < 0) newCount = 0;
+      if (newCount > 4) newCount = 4;
+      const updated = { ...prev };
+      if (newCount === 0) {
+        delete updated[cardNumber];
+      } else {
+        updated[cardNumber] = newCount;
+      }
+      return updated;
+    });
+  };
+
+  const handlePrintClickCounts = (cardNumber, delta) => {
+    setPrintClickCounts((prev) => {
       const current = prev[cardNumber] || 0;
       let newCount = current + delta;
       if (newCount < 0) newCount = 0;
@@ -62,7 +81,7 @@ function App() {
   };
 
   const openPrintModal = () => {
-    setPrintCards({ ...activeCards });
+    setPrintClickCounts(structuredClone(clickCounts));
     setIsPrintModalOpen(true);
   };
 
@@ -242,22 +261,22 @@ function App() {
             <button className="close-button" onClick={closePrintModal}>
               ×
             </button>
-            {Object.keys(printCards).map((cardNumber) => {
+            {Object.keys(stringifiedPrintCards).map((cardNumber) => {
               const card = cards.find((c) => c.card_number === cardNumber);
               if (!card) return null;
               return (
                 <div key={cardNumber} className="modal-card">
                   <img src={card.image_url} alt={`card-${cardNumber}`} />
                   <div className="modal-controls">
-                    <button onClick={() => handleChangeCount(cardNumber, 1)}>
+                    <button onClick={() => handlePrintClickCounts(cardNumber, 1)}>
                       +
                     </button>
                     <input
                       type="number"
                       readOnly
-                      value={clickCounts[cardNumber] || 0}
+                      value={printClickCounts[cardNumber] || 0}
                     />
-                    <button onClick={() => handleChangeCount(cardNumber, -1)}>
+                    <button onClick={() => handlePrintClickCounts(cardNumber, -1)}>
                       -
                     </button>
                   </div>
