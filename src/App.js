@@ -145,6 +145,7 @@ function App() {
         images.push({
           cardNumber,
           url: card.image_url,
+          cardKind: card.card_kind,
         });
       }
     });
@@ -174,7 +175,11 @@ function App() {
               .map(
                 (image, cellIndex) => `
                   <div class="print-cell" aria-label="card-${image.cardNumber}-${cellIndex}">
-                    <img src="${image.url}" alt="card-${image.cardNumber}" class="print-image" />
+                    <img
+                      src="${image.url}"
+                      alt="card-${image.cardNumber}"
+                      class="print-image${image.cardKind === 'ライブ' ? ' print-image-rotated' : ''}"
+                    />
                   </div>
                 `
               )
@@ -222,6 +227,10 @@ function App() {
               width: 100%;
               height: 100%;
               object-fit: contain;
+            }
+            .print-image-rotated {
+              transform: rotate(180deg);
+              transform-origin: center;
             }
           </style>
         </head>
