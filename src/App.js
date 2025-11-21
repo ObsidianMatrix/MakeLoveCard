@@ -136,6 +136,114 @@ function App() {
     }
   };
 
+  const buildPrintImageList = () => {
+    const images = [];
+    Object.entries(printClickCounts).forEach(([cardNumber, count]) => {
+      const card = cards.find((c) => c.card_number === cardNumber);
+      if (!card) return;
+      for (let i = 0; i < count; i += 1) {
+        images.push({
+          cardNumber,
+          url: card.image_url,
+        });
+      }
+    });
+    return images;
+  };
+
+  const handleSavePdf = () => {
+    const images = buildPrintImageList();
+    if (images.length === 0) return;
+
+    const pages = [];
+    for (let i = 0; i < images.length; i += 9) {
+      pages.push(images.slice(i, i + 9));
+    }
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      console.error('Unable to open print window');
+      return;
+    }
+
+    const pageMarkup = pages
+      .map(
+        (page, pageIndex) => `
+          <div class="print-page" aria-label="page-${pageIndex + 1}">
+            ${page
+              .map(
+                (image, cellIndex) => `
+                  <div class="print-cell" aria-label="card-${image.cardNumber}-${cellIndex}">
+                    <img src="${image.url}" alt="card-${image.cardNumber}" class="print-image" />
+                  </div>
+                `
+              )
+              .join('')}
+            ${Array.from({ length: 9 - page.length })
+              .map(
+                (_, fillerIndex) => `
+                  <div class="print-cell" aria-label="filler-${pageIndex}-${fillerIndex}"></div>
+                `
+              )
+              .join('')}
+          </div>
+        `
+      )
+      .join('');
+
+    printWindow.document.write(`
+      <!doctype html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <title>Card Print</title>
+          <style>
+            @page { margin: 10mm; }
+            body { margin: 0; padding: 0; }
+            .print-page {
+              width: 190mm;
+              height: 277mm;
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-template-rows: repeat(3, 1fr);
+              gap: 6mm;
+              page-break-after: always;
+              box-sizing: border-box;
+              padding: 2mm;
+              margin: 0 auto;
+            }
+            .print-page:last-of-type { page-break-after: auto; }
+            .print-cell {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .print-image {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          </style>
+        </head>
+        <body>
+          ${pageMarkup}
+          <script>
+            window.onload = function () {
+              setTimeout(function () {
+                window.focus();
+                window.print();
+                window.close();
+              }, 100);
+            };
+          </script>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+  };
+
   // Axios GET to fetch deck data and populate the form
   const handleAxiosImport = async () => {
     try {
@@ -261,6 +369,11 @@ function App() {
             <button className="close-button" onClick={closePrintModal}>
               ×
             </button>
+            <div className="modal-actions">
+              <button type="button" className="action-button" onClick={handleSavePdf}>
+                保存（PDF）
+              </button>
+            </div>
             {Object.keys(stringifiedPrintCards).map((cardNumber) => {
               const card = cards.find((c) => c.card_number === cardNumber);
               if (!card) return null;
