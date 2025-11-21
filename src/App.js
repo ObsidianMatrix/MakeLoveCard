@@ -201,15 +201,13 @@ function App() {
             @page { margin: 10mm; }
             body { margin: 0; padding: 0; }
             .print-page {
-              width: 190mm;
-              height: 277mm;
+              width: 226mm;
+              height: 317mm;
               display: grid;
               grid-template-columns: repeat(3, 1fr);
               grid-template-rows: repeat(3, 1fr);
-              gap: 6mm;
               page-break-after: always;
               box-sizing: border-box;
-              padding: 2mm;
               margin: 0 auto;
             }
             .print-page:last-of-type { page-break-after: auto; }
