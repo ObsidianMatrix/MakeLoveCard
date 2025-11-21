@@ -8,6 +8,8 @@ function App() {
   const [activeCards, setActiveCards] = useState({});
   const [name, setName] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
+  const [printCards, setPrintCards] = useState({});
   const [decklogId, setDecklogId] = useState('');
   const fileInputRef = useRef(null);
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
@@ -57,6 +59,15 @@ function App() {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const openPrintModal = () => {
+    setPrintCards({ ...activeCards });
+    setIsPrintModalOpen(true);
+  };
+
+  const closePrintModal = () => {
+    setIsPrintModalOpen(false);
   };
 
   const handleImportClick = () => {
@@ -155,6 +166,9 @@ function App() {
       <button type="button" onClick={openModal}>
         デッキを確認
       </button>
+      <button type="button" onClick={openPrintModal}>
+        印刷
+      </button>
       <form>
         <label htmlFor="deck-name">デッキ名</label>
         <input
@@ -203,6 +217,37 @@ function App() {
                     src={card.image_url}
                     alt={`card-${cardNumber}`}
                   />
+                  <div className="modal-controls">
+                    <button onClick={() => handleChangeCount(cardNumber, 1)}>
+                      +
+                    </button>
+                    <input
+                      type="number"
+                      readOnly
+                      value={clickCounts[cardNumber] || 0}
+                    />
+                    <button onClick={() => handleChangeCount(cardNumber, -1)}>
+                      -
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+      {isPrintModalOpen && (
+        <div className="modal-overlay" onClick={closePrintModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closePrintModal}>
+              ×
+            </button>
+            {Object.keys(printCards).map((cardNumber) => {
+              const card = cards.find((c) => c.card_number === cardNumber);
+              if (!card) return null;
+              return (
+                <div key={cardNumber} className="modal-card">
+                  <img src={card.image_url} alt={`card-${cardNumber}`} />
                   <div className="modal-controls">
                     <button onClick={() => handleChangeCount(cardNumber, 1)}>
                       +
