@@ -1,3 +1,4 @@
+/* global axios */
 import './App.css';
 import cards from './cards.json';
 import { useRef, useState } from 'react';
@@ -7,6 +8,7 @@ function App() {
   const [activeCards, setActiveCards] = useState({});
   const [name, setName] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [decklogId, setDecklogId] = useState('');
   const fileInputRef = useRef(null);
   const displayCards = cards.filter((card) => card.card_kind !== 'エネルギー');
   const totalValue = Object.values(clickCounts).reduce((sum, val) => sum + val, 0);
@@ -72,26 +74,57 @@ function App() {
     reader.onload = (event) => {
       try {
         const data = JSON.parse(event.target.result);
-        setName(data.name || '');
-        const importedCounts = {};
-        const importedActive = {};
-        if (data.cards) {
-          Object.entries(data.cards).forEach(([k, v]) => {
-            const num = parseInt(v, 10);
-            if (!Number.isNaN(num) && num > 0) {
-              importedCounts[k] = num;
-              importedActive[k] = true;
-            }
-          });
-        }
-        setClickCounts(importedCounts);
-        setActiveCards(importedActive);
+        importDeckData(data);
       } catch (err) {
         console.error('Invalid JSON file');
       }
     };
     reader.readAsText(file);
     e.target.value = '';
+  };
+
+  // Shared importer: apply name and card counts to state
+  const importDeckData = (raw) => {
+    try {
+      const data = typeof raw === 'string' ? JSON.parse(raw) : raw;
+      setName(data?.name || '');
+      const importedCounts = {};
+      const importedActive = {};
+      if (data && data.cards && typeof data.cards === 'object') {
+        Object.entries(data.cards).forEach(([k, v]) => {
+          const num = parseInt(v, 10);
+          if (!Number.isNaN(num) && num > 0) {
+            importedCounts[k] = num;
+            importedActive[k] = true;
+          }
+        });
+      }
+      setClickCounts(importedCounts);
+      setActiveCards(importedActive);
+    } catch (e) {
+      console.error('Failed to import deck data:', e);
+    }
+  };
+
+  // Axios GET to fetch deck data and populate the form
+  const handleAxiosImport = async () => {
+    try {
+      if (typeof axios === 'undefined') {
+        console.error('axios is not available');
+        return;
+      }
+      if (!decklogId) {
+        console.error('decklog id is required');
+        return;
+      }
+      const res = await axios.get(
+        'https://i3289ppivh.execute-api.ap-northeast-1.amazonaws.com/scraping_deck',
+        { params: { id: decklogId } }
+      );
+      importDeckData(res?.data);
+    } catch (error) {
+      console.error('GET failed:', error);
+    }
   };
 
   return (
@@ -144,6 +177,8 @@ function App() {
         <button type="button" onClick={handleImportClick}>
           インポート
         </button>
+        <input type="text" aria-label="decklog-id" placeholder="decklog ID" value={decklogId} onChange={(e) => setDecklogId(e.target.value)} />
+        <button type="button" onClick={handleAxiosImport}>decklogインポート</button>
       </form>
       <textarea
         aria-label="deck-json"
